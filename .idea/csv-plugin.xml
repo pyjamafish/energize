@@ -10,6 +10,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/energize/test.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/energize/third_floor_temperatures.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>

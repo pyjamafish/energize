@@ -26,14 +26,13 @@ def to_bulk_request(meters_df):
     Convert a dataframe to a bulk request
     to the Building Energy Gateway.
     """
-    meters_df.drop(columns=["CO2"], inplace=True)
-    meters_df.rename(
+    meters_df = meters_df.drop(columns=["CO2"])
+    meters_df = meters_df.rename(
         columns={
             "Label": "label",
             "Facility": "facility",
             "Temperature": "instance"
         },
-        inplace=True
     )
     return meters_df.to_dict("records")
 
