@@ -37,10 +37,14 @@ def to_bulk_request(meters_df):
     return meters_df.to_dict("records")
 
 
-def main():
+def get_temperatures() -> pd.DataFrame:
     bulk_request = to_bulk_request(get_third_floor_meters())
     response = bdr.get_bulk(bulk_request)
-    df = pd.DataFrame(response["rsp_list"])
+    return pd.DataFrame(response["rsp_list"])
+
+
+def main():
+    df = get_temperatures()
     df.to_csv(sys.stdout, index=False)
 
 
